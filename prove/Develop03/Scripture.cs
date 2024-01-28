@@ -36,12 +36,20 @@ class Scripture
   public void HideRandomWords(int numberToHide)
   {
     Random randomGenerator = new Random();
-    numberToHide = numberToHide > _words.Count() ? _words.Count() : numberToHide;
+    List<Word> words = _words;
+
+    numberToHide = numberToHide > words.Count() ? words.Count() : numberToHide;
   
     for (int i = 0; i < numberToHide; i++)
     {
-      int inx = randomGenerator.Next(0, _words.Count());
-      _words[inx].Hide();
+      int inx = randomGenerator.Next(0, words.Count());
+      if (words[inx].IsHidden() && !IsCompletelyHidden()) // Exceed requirement, just hide word available to hide.
+      {
+        i=i-1;
+        continue;
+      }
+
+      words[inx].Hide();
     }
   }
 
