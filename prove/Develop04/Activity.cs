@@ -80,6 +80,6 @@ class Activity
         Console.WriteLine();
 
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
-        ShowSpinner(5);
+        ShowSpinner(10);
     }
 }

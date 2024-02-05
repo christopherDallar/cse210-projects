@@ -36,7 +36,10 @@ class Program
 
                     break;
                 case 3:
-                    ListingActivity listingActivity = new ListingActivity();
+                    ListingActivity listingActivity = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+
+                    listingActivity.Run();
+
                     break;
             }
 

@@ -25,16 +25,16 @@ class ReflectingActivity : Activity
   string GetRandomPrompt()
   {
     Random randomGenerator = new Random();
-    int inx = randomGenerator.Next(0, _prompts.Count());
+    int idx = randomGenerator.Next(0, _prompts.Count());
 
-    return _prompts[inx];
+    return _prompts[idx];
   }
   string GetRandomQuestion()
   {
     Random randomGenerator = new Random();
-    int inx = randomGenerator.Next(0, _questions.Count());
+    int idx = randomGenerator.Next(0, _questions.Count());
 
-    return _questions[inx];
+    return _questions[idx];
   }
   void DisplayPrompt()
   {
