@@ -30,14 +30,15 @@ class Program
 
                     break;
                 case 2:
-                    ReflectingActivity reflectingActivity = new ReflectingActivity();
+                    ReflectingActivity reflectingActivity = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+
+                    reflectingActivity.Run();
+
                     break;
                 case 3:
                     ListingActivity listingActivity = new ListingActivity();
                     break;
             }
-
-
 
         }
     }

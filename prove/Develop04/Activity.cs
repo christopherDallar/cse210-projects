@@ -14,17 +14,23 @@ class Activity
 
     protected void ShowCountDown(int seconds)
     {
-        for (int i = seconds; i >= 0; i--)
-        {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
 
-            int stepsToErase = (int)Math.Floor(Math.Log10(1000) + 1);
+        int i = seconds;
+
+        while (DateTime.Now < endTime)
+        {
+            int stepsToErase = (int)Math.Floor(Math.Log10(i) + 1);
             string eraseChar = string.Concat(Enumerable.Repeat("\b \b", stepsToErase)); // Exceed requirement, i take into account that whatever second can be given by argument and i'm repeat the eraser string as much will be necessary to erase each digits
 
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write(eraseChar);
 
+            i--;
         }
+
     }
 
     protected void ShowSpinner(int seconds)
@@ -65,7 +71,7 @@ class Activity
 
         Console.Clear();
         Console.WriteLine("Get ready...");
-        ShowSpinner(1);
+        ShowSpinner(5);
     }
     protected void DisplayEndingMessage()
     {
@@ -74,6 +80,6 @@ class Activity
         Console.WriteLine();
 
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
-        ShowCountDown(10);
+        ShowSpinner(5);
     }
 }
