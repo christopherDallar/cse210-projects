@@ -1,0 +1,4 @@
+0
+SimpleGoal:sad,desxsa,1000,False
+EternalGoal:eter,deseter,1000
+ChecklistGoal:list,deslis,100,1000,3,0
