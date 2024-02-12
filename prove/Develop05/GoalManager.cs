@@ -66,7 +66,16 @@ class GoalManager
     }
     void ListGoalNames()
     {
+        Console.WriteLine("The Goals are:");
 
+
+        for (int i = 0; i < _goals.Count(); i++)
+        {
+            Goal goal = _goals[i];
+
+            Console.WriteLine($"{i + 1}. " + goal.getName());
+
+        }
     }
     void ListGoalDetails()
     {
@@ -76,7 +85,11 @@ class GoalManager
         {
             Goal goal = _goals[i];
 
-            Console.WriteLine($"{i + 1}. " + goal.GetDetailsString());
+            bool isComplete = goal.IsComplete();
+
+            string squareComplete = isComplete ? "[X]" : "[ ]";
+
+            Console.WriteLine($"{i + 1}. {squareComplete} " + goal.GetDetailsString());
 
         }
 
@@ -143,6 +156,22 @@ class GoalManager
 
     void RecordEvent()
     {
+        ListGoalNames();
+
+        Console.Write("Which goal did you accomplish? ");
+        int option = int.Parse(Console.ReadLine());
+
+        if (option > _goals.Count() || _goals.Count() == 0) return;
+
+        Goal goal = _goals[option - 1];
+
+        if (goal.IsComplete()) return;
+
+        goal.RecordEvent();
+
+        _score += goal.getPoints();
+
+        Console.WriteLine($"Congratulations! You have earned {goal.getPoints()} points!");
 
     }
     void SaveGoals()
@@ -184,9 +213,6 @@ class GoalManager
             string[] typeXData = line.Split(":");
             string[] data = typeXData[1].Split(",");
 
-            Console.WriteLine(data);
-            Console.WriteLine(typeXData);
-
             string goalType = typeXData[0];
             string shortName = data[0];
             string description = data[1];
@@ -197,17 +223,17 @@ class GoalManager
                 case "SimpleGoal":
                     bool isComplete = bool.Parse(data[3]);
 
-                    if (isComplete) break;
+                    Goal goal = new SimpleGoal(shortName, description, points, isComplete);
 
-                    Goal goal = new SimpleGoal(shortName, description, points);
                     _goals.Add(goal);
 
                     break;
                 case "ChecklistGoal":
                     int target = int.Parse(data[4]);
+                    int amountCompleted = int.Parse(data[5]);
                     int bonus = int.Parse(data[3]);
 
-                    goal = new ChecklistGoal(shortName, description, points, target, bonus);
+                    goal = new ChecklistGoal(shortName, description, points, target, bonus, amountCompleted);
                     _goals.Add(goal);
 
                     break;

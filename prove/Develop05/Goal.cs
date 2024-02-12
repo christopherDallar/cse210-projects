@@ -2,7 +2,7 @@ using System;
 
 abstract class Goal
 {
-  protected string _shortName;
+  protected readonly string _shortName;
   protected string _description;
   protected string _points;
 
@@ -11,6 +11,16 @@ abstract class Goal
     _shortName = name;
     _description = description;
     _points = points;
+  }
+
+  public string getName()
+  {
+    return _shortName;
+  }
+
+  public virtual int getPoints()
+  {
+    return int.Parse(_points);
   }
 
   public virtual void RecordEvent()
@@ -25,7 +35,7 @@ abstract class Goal
 
   public virtual string GetDetailsString()
   {
-    return $"[ ] {_shortName} ({_description})";
+    return $"{_shortName} ({_description})";
   }
 
   public virtual string GetStringRepresentation()
