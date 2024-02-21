@@ -7,8 +7,6 @@ class Cart
   Client _client;
   List<Product> _products = new List<Product>();
 
-  DateTime _birthday;
-
   public Cart()
   {
 
@@ -204,6 +202,35 @@ class Cart
 
   void UpdateProductStock()
   {
+    ListProducts();
+
+    Console.WriteLine("");
+    Console.Write("Select a product to update the stock: ");
+    int productIdx = int.Parse(Console.ReadLine()) - 1;
+
+    Console.WriteLine("");
+    Console.Write("Type 1 for increase or 0 for decrease stock quantity: ");
+    bool toIncrease = int.Parse(Console.ReadLine()) == 1;
+
+    Console.WriteLine("");
+    Console.Write("Type quantity (units): ");
+    int qty = int.Parse(Console.ReadLine());
+
+    Product product = _products[productIdx];
+
+    if (toIncrease)
+    {
+      product.IncrementQty(qty);
+    }
+    else
+    {
+      product.DecrementQty(qty);
+    }
+
+
+    Console.WriteLine("");
+    Console.WriteLine("Product Stock Updated");
+    Console.WriteLine($"{productIdx + 1}. {product.GetDetailsString()}");
 
   }
 

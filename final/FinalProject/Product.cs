@@ -40,14 +40,14 @@ abstract class Product
     return "";
   }
 
-  public void DecrementQty()
+  public void DecrementQty(int qty)
   {
-
+    _qtyAvailable -= Math.Abs(qty);
   }
 
-  public void IncrementQty()
+  public void IncrementQty(int qty)
   {
-
+    _qtyAvailable += Math.Abs(qty);
   }
 
   public int GetQty()
