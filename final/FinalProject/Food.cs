@@ -19,7 +19,7 @@ class Food : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Food";
+    return $"{base.GetDetailsString()}, Expiration Date: {_expirationDate}, Category: Food.";
   }
 
   override public string GetStringRepresentation()

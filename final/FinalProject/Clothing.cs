@@ -22,7 +22,7 @@ class Clothing : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Clothing";
+    return $"{base.GetDetailsString()}, Size: {_size}, Color: {_color}, Category: Clothing.";
   }
 
 

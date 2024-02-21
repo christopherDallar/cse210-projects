@@ -26,7 +26,7 @@ class Fabrics : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Fabrics";
+    return $"{base.GetDetailsString()}, Width: {_width}, Height: {_height}, Material: {_material}, Category: Fabrics.";
   }
 
   override public string GetStringRepresentation()

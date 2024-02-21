@@ -18,7 +18,7 @@ class Electronic : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Electronic";
+    return $"{base.GetDetailsString()}, Warranty for: {_warrantyPeriod}, Category: Electronic.";
   }
 
   override public string GetStringRepresentation()

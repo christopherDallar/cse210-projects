@@ -18,7 +18,8 @@ class Plant : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Plant";
+    string needShade = _needShade ? "Yes" : "No";
+    return $"{base.GetDetailsString()}, Does it need shade?: {needShade}, Category: Plant.";
   }
 
   override public string GetStringRepresentation()

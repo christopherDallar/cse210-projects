@@ -19,6 +19,7 @@ class Cart
     while (true)
     {
 
+      Console.WriteLine("");
       Console.WriteLine("Menu Options:");
       Console.WriteLine("1. Show Inventory");
       Console.WriteLine("2. Create new Product");
@@ -29,6 +30,8 @@ class Cart
       Console.WriteLine("7. Quit");
       Console.Write("Select a choice from the menu: ");
       int option = int.Parse(Console.ReadLine());
+
+      Console.WriteLine("");
 
       if (option == 7)
       {
@@ -120,11 +123,11 @@ class Cart
     Console.Write("What is the name of your product? ");
     string name = Console.ReadLine();
 
-    Console.Write("What is the cost of your product? ");
-    double cost = double.Parse(Console.ReadLine());
-
     Console.Write("What is the brand of your product? ");
     string brand = Console.ReadLine();
+
+    Console.Write("What is the cost of your product? ");
+    double cost = double.Parse(Console.ReadLine());
 
     Console.Write("What is the barCode of your product? ");
     int barCode = int.Parse(Console.ReadLine());
@@ -135,21 +138,21 @@ class Cart
     switch (option)
     {
       case 1:
-        Console.Write("What is the expiration date of your product? ");
+        Console.Write("What is the expiration date of your product (Format: mm-dd-yyyy)? ");
         DateTime expirationDate = DateTime.Parse(Console.ReadLine());
 
         Product product = new Food(name, cost, brand, barCode, qtyAvailable, expirationDate);
         _products.Add(product);
         break;
       case 2:
-        Console.Write("What is the warranty period of your product? ");
+        Console.Write("What is the warranty (string) period of your product? ");
         string warrantyPeriod = Console.ReadLine();
 
         product = new Electronic(name, cost, brand, barCode, qtyAvailable, warrantyPeriod);
         _products.Add(product);
         break;
       case 3:
-        Console.Write("What is the size of your product? ");
+        Console.Write("What is the size of your product (XS, S, M, L, XL, XXL)? ");
         string size = Console.ReadLine();
 
         Console.Write("What is the color of your product? ");
@@ -159,10 +162,10 @@ class Cart
         _products.Add(product);
         break;
       case 4:
-        Console.Write("What is the width of your product? ");
+        Console.Write("What is the width (number) of your product? ");
         double width = double.Parse(Console.ReadLine());
 
-        Console.Write("What is the height of your product? ");
+        Console.Write("What is the height (number) of your product? ");
         double height = double.Parse(Console.ReadLine());
 
         Console.Write("What is the material of your product? ");
@@ -179,10 +182,10 @@ class Cart
         _products.Add(product);
         break;
       case 6:
-        Console.Write("What is the mileage of your product? ");
+        Console.Write("What is the mileage (number) of your product? ");
         double mileage = double.Parse(Console.ReadLine());
 
-        Console.Write("What is the horse power of your product? ");
+        Console.Write("What is the horse power (number) of your product? ");
         int horsePower = int.Parse(Console.ReadLine());
 
         Console.Write("What is the color of your product? ");

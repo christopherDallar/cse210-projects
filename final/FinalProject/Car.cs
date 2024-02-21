@@ -25,7 +25,7 @@ class Car : Product
 
   override public string GetDetailsString()
   {
-    return base.GetDetailsString() + ", Category: Car";
+    return $"{base.GetDetailsString()}, Mileage: {_mileage}, HorsePower: {_horsePower}, Color: {_color}, Category: Car.";
   }
   override public string GetStringRepresentation()
   {
