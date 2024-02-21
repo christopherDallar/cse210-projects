@@ -31,7 +31,7 @@ class Fabrics : Product
 
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"fabrics|{base.GetStringRepresentation()}|{_width}|{_height}|{_material}";
   }
 
 }

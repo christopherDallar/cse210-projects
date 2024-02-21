@@ -1,0 +1,6 @@
+food|pasta|pastini|321|12|12|10/10/2024 12:00:00 AM
+electronic|elec|general|213|32|1|4 years
+clothing|ropa|gucci|543|10|8|xs|blue
+fabrics|algo|castillo|12311|89|2|12|21|algodon
+plant|flor|wallmart|444444|3|4|True
+car|light|renault|9999|10888|9|0|500|gray

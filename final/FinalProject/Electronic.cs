@@ -23,7 +23,7 @@ class Electronic : Product
 
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"electronic|{base.GetStringRepresentation()}|{_warrantyPeriod}";
   }
 
 }

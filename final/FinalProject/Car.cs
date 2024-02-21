@@ -29,7 +29,7 @@ class Car : Product
   }
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"car|{base.GetStringRepresentation()}|{_mileage}|{_horsePower}|{_color}";
   }
 
 }

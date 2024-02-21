@@ -24,7 +24,7 @@ class Food : Product
 
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"food|{base.GetStringRepresentation()}|{_expirationDate}";
   }
 
 }

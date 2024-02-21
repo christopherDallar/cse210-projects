@@ -24,7 +24,7 @@ class Plant : Product
 
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"plant|{base.GetStringRepresentation()}|{_needShade}";
   }
 
 }

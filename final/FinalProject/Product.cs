@@ -32,12 +32,12 @@ abstract class Product
 
   virtual public string GetDetailsString()
   {
-    return $"{_name}, brand: {_brand}, barcode: {_barCode}; Cost: {_cost}, Available Qty: {_qtyAvailable}";
+    return $"{_name}, Brand: {_brand}, Barcode: {_barCode}; Cost: {_cost}, Available Qty: {_qtyAvailable}";
   }
 
   virtual public string GetStringRepresentation()
   {
-    return "";
+    return $"{_name}|{_brand}|{_barCode}|{_cost}|{_qtyAvailable}";
   }
 
   public void DecrementQty(int qty)

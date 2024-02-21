@@ -28,7 +28,7 @@ class Clothing : Product
 
   override public string GetStringRepresentation()
   {
-    return "";
+    return $"clothing|{base.GetStringRepresentation()}|{_size}|{_color}";
   }
 
 }
